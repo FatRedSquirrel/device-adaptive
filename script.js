@@ -55,15 +55,24 @@ function showTab(n) {
 // === / services buttons ===   
 
 
-// === menu ===  
+  
 const burger = document.querySelector('.burger'),
   menu = document.querySelector('.mobile-menu'),
   overlay = document.querySelector('.overlay'),
   submenuOpen = document.querySelector('.submenu-open'),
   menuList = document.querySelector('.mobile-menu-list'),
   mobileBack = document.querySelector('.mobile-back-link'),
-  submenu = document.querySelector('.submenu');
+  submenu = document.querySelector('.submenu'),
+  quantityInput = document.querySelector('.modal-form-input-quantity'),
+  plus = document.querySelector('.quantity-button-plus'),
+  minus = document.querySelector('.quantity-button-minus'),
+  modalOpen = document.querySelector('.delivery-button'),
+  modal = document.querySelector('.modal'),
+  modalClose = document.querySelector('.modal-close'),
+  modalCloseMobile = document.querySelector('.modal-close-mobile');
 
+
+// === menu ===
 burger.addEventListener('click', () => {
   menu.classList.toggle('open');
   overlay.classList.toggle('open');
@@ -77,23 +86,9 @@ overlay.addEventListener('click', () => {
   document.body.style.overflow = 'auto';
 });
 
-
-
-
-
-// submenuOpen.addEventListener('click', () => {
-//   menuList.classList.add('transform');
-//   submenu.classList.add('transform');
-// });
-
-
-
-
-
 mobileBack.addEventListener('click', () => {
   menuList.classList.remove('transform');
 });
-
 
 menu.addEventListener('click', (e) => {
   if(e.target.classList.contains('submenu-open')) {
@@ -109,4 +104,42 @@ menu.addEventListener('click', (e) => {
   }
 });
 // === / menu ===
+
+
+// === quantity ===
+plus.addEventListener('click', () => {
+  let quantity = Number(quantityInput.value);
+  quantityInput.value = quantity + 1;
+
+  if (quantity > 0) {
+    quantityInput.classList.remove('invalid');
+  }
+});
+
+minus.addEventListener('click', () => {
+  let quantity = Number(quantityInput.value);
+  quantityInput.value = quantity - 1;
+
+  if (quantity < 1) {
+    quantity = 0;
+    quantityInput.value = quantity;
+  }
+});
+// === / quantity ===
+
+
+// === modal ===
+modalOpen.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+modalCloseMobile.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+// === / modal ===
 

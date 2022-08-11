@@ -43,10 +43,44 @@
             <li class="header-top-item">
               <a class="header-top-link" href="#">Сравнить</a>
             </li>
-            <li class="header-top-item">
+            <li class="header-top-item header-top-item-cart">
               <a class="header-top-link" href="#">Корзина
                 <span class="cart-quantity">2</span>
               </a>
+              <div class="cart">
+                <ul class="cart-list">
+                  <li class="cart-item">
+                    <a class="cart-item-link" href="#">
+                      <img class="cart-item-image" src="images/cart-1.png" alt="Товар." width="39" height="43">
+                      <h4 class="cart-item-title">Любительская селфи-палка</h4>
+                    </a>
+                    <button class="item-delete">
+                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
+                      </svg>
+                    </button>
+                  </li>
+                  <li class="cart-item">
+                    <a class="cart-item-link" href="#">
+                      <img class="cart-item-image" src="images/cart-2.png" alt="Товар." width="39" height="43">
+                      <h4 class="cart-item-title">Профессиональная
+                        селфи-палка</h4>
+                    </a>
+                    <button class="item-delete">
+                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+                <div class="cart-amount-cost">
+                  <span>Товаров: 2</span>
+                  <span>Сумма: 2000 ₽</span>
+                </div>
+                <a class="cart-open-link" href="#">Открыть корзину</a>
+              </div>
             </li>
           </ul>
           <button class="burger"><span></span></button>
@@ -352,6 +386,62 @@
   <!-- MODAL -->
   <div class="modal-container container">
     <button class="delivery-button">Доставим редкий товар под заказ</button>
+    <div class="modal">
+      <form class="modal-form" action="#">
+        <h2 class="section-title modal-title">Доставка под заказ</h2>
+        <div class="modal-form-group">
+          <div class="input-group input-group-personal-information">
+            <label class="modal-form-label" for="name">Ваше имя:</label>
+            <input class="modal-form-input modal-form-input-name" type="text" id="name" placeholder="Введите имя">
+          </div>
+          <div class="input-group input-group-personal-information">
+            <label class="modal-form-label" for="email">Ваш e-mail:</label>
+            <input class="modal-form-input modal-form-input-email" type="email" id="email" placeholder="Введите имя">
+          </div>
+        </div>
+        <div class="modal-form-group">
+          <div class="input-group">
+            <label class="modal-form-label" for="commodity">Что нужно привезти:</label>
+            <input class="modal-form-input" type="text" id="commodity" placeholder="В свободной форме">
+          </div>
+          <div class="input-group">
+            <label class="modal-form-label modal-form-label-quantity" for="quantity">Количество:
+              <div class="tooltip">
+                <svg width="2" height="12" viewBox="0 0 2 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 0H0V2H2V0Z" />
+                  <path d="M2 4H0V12H2V4Z" />
+                </svg>
+                <div class="tooltip-text">
+                  Постараемся найти, сколько нужно. Привезём сколько получится по требованиям
+                  к провозу багажа.
+                </div>
+              </div>
+            </label>
+            <div class="input-quantity-container">
+              <input class="modal-form-input modal-form-input-quantity" type="number" id="quantity">
+              <button class="quantity-button quantity-button-minus" type="button">
+                <svg width="16" height="3" viewBox="0 0 16 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 0.166748H0V2.16675H16V0.166748Z" />
+                </svg>
+              </button>
+              <button class="quantity-button quantity-button-plus" type="button">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 7H9V0H7V7H0V9H7V16H9V9H16V7Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="main-link modal-form-button" type="submit">Отправить</button>
+        <button class="modal-close" type="button">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M26 2.36364L23.6364 0L13 10.6364L2.36364 0L0 2.36364L10.6364 13L0 23.6364L2.36364 26L13 15.3636L23.6364 26L26 23.6364L15.3636 13L26 2.36364Z" />
+          </svg>
+        </button>
+        <button class="modal-close-mobile" type="button">Закрыть</button>
+      </form>
+    </div>
   </div>
   <!-- / MODAL -->
 
