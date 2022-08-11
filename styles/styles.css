@@ -1520,6 +1520,7 @@ body {
     grid-template-columns: 1fr;
     row-gap: 30px;
     justify-items: center;
+    height: 425px;
   }
   .services-content .section-title,
 .services-content .section-description {
