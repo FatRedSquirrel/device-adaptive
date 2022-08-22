@@ -1,3 +1,120 @@
+const burger = document.querySelector('.burger'),
+  menu = document.querySelector('.mobile-menu'),
+  overlay = document.querySelector('.overlay'),
+  submenuOpen = document.querySelector('.submenu-open'),
+  menuList = document.querySelector('.mobile-menu-list'),
+  mobileBack = document.querySelector('.mobile-back-link'),
+  submenu = document.querySelector('.submenu'),
+  quantityInput = document.querySelector('.modal-form-input-quantity'),
+  plus = document.querySelector('.quantity-button-plus'),
+  minus = document.querySelector('.quantity-button-minus'),
+  modalOpen = document.querySelector('.delivery-button'),
+  modal = document.querySelector('.modal'),
+  modalClose = document.querySelector('.modal-close'),
+  modalCloseMobile = document.querySelector('.modal-close-mobile'),
+  filtersOpen = document.querySelector('.filters-mobile-open'),
+  filtersClose = document.querySelector('.filters-mobile-close'),
+  filtersSubmit = document.querySelector('.filters-mobile-submit'),
+  filters = document.querySelector('.filters-mobile'),
+  productList = document.querySelector('.product-cards-list'),
+  footer = document.querySelector('.footer');
+
+
+// === filters ===
+filtersOpen.addEventListener('click', () => {
+  filters.classList.toggle('open');
+  productList.style.display = 'none';
+  footer.style.display = 'none';
+  document.body.classList.add('filters-active');
+});
+
+filtersClose.addEventListener('click', () => {
+  filters.classList.toggle('open');
+  productList.style.display = 'grid';
+  footer.style.display = 'block';
+  document.body.classList.remove('filters-active');
+});
+
+filtersSubmit.addEventListener('click', () => {
+  filters.classList.toggle('open');
+  productList.style.display = 'grid';
+  footer.style.display = 'block';
+  document.body.classList.remove('filters-active');
+});
+// === / filters ===
+
+
+// === menu ===
+burger.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = 'hidden';
+  menuList.classList.remove('transform');
+});
+
+overlay.addEventListener('click', () => {
+  menu.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = 'auto';
+});
+
+mobileBack.addEventListener('click', () => {
+  menuList.classList.remove('transform');
+});
+
+menu.addEventListener('click', (e) => {
+  if (e.target.classList.contains('submenu-open')) {
+    e.preventDefault();
+    e.target.closest('.mobile-menu-list').classList.add('transform');
+    e.target.closest('.mobile-menu-item').querySelector('.submenu').classList.add('transform');
+  }
+
+  if (e.target.classList.contains('mobile-back-link')) {
+    e.preventDefault();
+    e.target.closest('.mobile-menu-list').classList.remove('transform');
+    e.target.closest('.submenu').classList.remove('transform');
+  }
+});
+// === / menu ===
+
+
+// === quantity ===
+plus.addEventListener('click', () => {
+  let quantity = Number(quantityInput.value);
+  quantityInput.value = quantity + 1;
+
+  if (quantity > 0) {
+    quantityInput.classList.remove('invalid');
+  }
+});
+
+minus.addEventListener('click', () => {
+  let quantity = Number(quantityInput.value);
+  quantityInput.value = quantity - 1;
+
+  if (quantity < 1) {
+    quantity = 0;
+    quantityInput.value = quantity;
+  }
+});
+// === / quantity ===
+
+
+// === modal ===
+modalOpen.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+modalCloseMobile.addEventListener('click', () => {
+  modal.classList.toggle('open');
+});
+
+// === / modal ===
+
 // === slider ===
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -52,94 +169,11 @@ function showTab(n) {
   tabs[tabIndex - 1].style.display = "grid";
   servicesButtons[tabIndex - 1].classList.add("services-button-current");
 }
-// === / services buttons ===   
+// === / services buttons ===
 
 
-  
-const burger = document.querySelector('.burger'),
-  menu = document.querySelector('.mobile-menu'),
-  overlay = document.querySelector('.overlay'),
-  submenuOpen = document.querySelector('.submenu-open'),
-  menuList = document.querySelector('.mobile-menu-list'),
-  mobileBack = document.querySelector('.mobile-back-link'),
-  submenu = document.querySelector('.submenu'),
-  quantityInput = document.querySelector('.modal-form-input-quantity'),
-  plus = document.querySelector('.quantity-button-plus'),
-  minus = document.querySelector('.quantity-button-minus'),
-  modalOpen = document.querySelector('.delivery-button'),
-  modal = document.querySelector('.modal'),
-  modalClose = document.querySelector('.modal-close'),
-  modalCloseMobile = document.querySelector('.modal-close-mobile');
 
 
-// === menu ===
-burger.addEventListener('click', () => {
-  menu.classList.toggle('open');
-  overlay.classList.toggle('open');
-  document.body.style.overflow = 'hidden';
-  menuList.classList.remove('transform');
-});
-
-overlay.addEventListener('click', () => {
-  menu.classList.toggle('open');
-  overlay.classList.toggle('open');
-  document.body.style.overflow = 'auto';
-});
-
-mobileBack.addEventListener('click', () => {
-  menuList.classList.remove('transform');
-});
-
-menu.addEventListener('click', (e) => {
-  if(e.target.classList.contains('submenu-open')) {
-    e.preventDefault();
-    e.target.closest('.mobile-menu-list').classList.add('transform');
-    e.target.closest('.mobile-menu-item').querySelector('.submenu').classList.add('transform');
-  }
-
-  if(e.target.classList.contains('mobile-back-link')) {
-    e.preventDefault();
-    e.target.closest('.mobile-menu-list').classList.remove('transform');
-    e.target.closest('.submenu').classList.remove('transform');
-  }
-});
-// === / menu ===
 
 
-// === quantity ===
-plus.addEventListener('click', () => {
-  let quantity = Number(quantityInput.value);
-  quantityInput.value = quantity + 1;
-
-  if (quantity > 0) {
-    quantityInput.classList.remove('invalid');
-  }
-});
-
-minus.addEventListener('click', () => {
-  let quantity = Number(quantityInput.value);
-  quantityInput.value = quantity - 1;
-
-  if (quantity < 1) {
-    quantity = 0;
-    quantityInput.value = quantity;
-  }
-});
-// === / quantity ===
-
-
-// === modal ===
-modalOpen.addEventListener('click', () => {
-  modal.classList.toggle('open');
-});
-
-modalClose.addEventListener('click', () => {
-  modal.classList.toggle('open');
-});
-
-modalCloseMobile.addEventListener('click', () => {
-  modal.classList.toggle('open');
-});
-
-// === / modal ===
 
