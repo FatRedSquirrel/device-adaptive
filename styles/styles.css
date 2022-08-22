@@ -1920,10 +1920,6 @@ p {
   visibility: hidden;
   transition: all 0.3s;
 }
-.filters-mobile.open {
-  opacity: 1;
-  visibility: visible;
-}
 .filters-mobile-header {
   position: relative;
   margin-bottom: 30px;
@@ -2010,6 +2006,11 @@ p {
 }
 .filters-mobile-submit:active {
   background-color: #ffc700;
+}
+
+.filters-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .filters-input-order:checked + .filters-label-name {

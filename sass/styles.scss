@@ -2214,11 +2214,6 @@ p {
   visibility: hidden;
   transition: all .3s;
 
-  &.open {
-    opacity: 1;
-    visibility: visible;
-  }
-
   &-header {
     position: relative;
     margin-bottom: 30px;
@@ -2322,6 +2317,11 @@ p {
       background-color: $color-additional;
     }
   }
+}
+
+.filters-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .filters-input-order:checked + .filters-label-name {

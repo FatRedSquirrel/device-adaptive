@@ -11,39 +11,9 @@ const burger = document.querySelector('.burger'),
   modalOpen = document.querySelector('.delivery-button'),
   modal = document.querySelector('.modal'),
   modalClose = document.querySelector('.modal-close'),
-  modalCloseMobile = document.querySelector('.modal-close-mobile'),
-  filtersOpen = document.querySelector('.filters-mobile-open'),
-  filtersClose = document.querySelector('.filters-mobile-close'),
-  filtersSubmit = document.querySelector('.filters-mobile-submit'),
-  filters = document.querySelector('.filters-mobile'),
-  productList = document.querySelector('.product-cards-list'),
-  footer = document.querySelector('.footer');
+  modalCloseMobile = document.querySelector('.modal-close-mobile');
 
-
-// === filters ===
-filtersOpen.addEventListener('click', () => {
-  filters.classList.toggle('open');
-  productList.style.display = 'none';
-  footer.style.display = 'none';
-  document.body.classList.add('filters-active');
-});
-
-filtersClose.addEventListener('click', () => {
-  filters.classList.toggle('open');
-  productList.style.display = 'grid';
-  footer.style.display = 'block';
-  document.body.classList.remove('filters-active');
-});
-
-filtersSubmit.addEventListener('click', () => {
-  filters.classList.toggle('open');
-  productList.style.display = 'grid';
-  footer.style.display = 'block';
-  document.body.classList.remove('filters-active');
-});
-// === / filters ===
-
-
+  
 // === menu ===
 burger.addEventListener('click', () => {
   menu.classList.toggle('open');
@@ -100,6 +70,7 @@ minus.addEventListener('click', () => {
 // === / quantity ===
 
 
+
 // === modal ===
 modalOpen.addEventListener('click', () => {
   modal.classList.toggle('open');
@@ -114,6 +85,8 @@ modalCloseMobile.addEventListener('click', () => {
 });
 
 // === / modal ===
+
+
 
 // === slider ===
 let slideIndex = 1;
@@ -147,6 +120,7 @@ function showSlides(n) {
 // === / slider ===
 
 
+
 // === services buttons ===
 tabIndex = 1;
 showTab(tabIndex);
@@ -170,6 +144,7 @@ function showTab(n) {
   servicesButtons[tabIndex - 1].classList.add("services-button-current");
 }
 // === / services buttons ===
+
 
 
 
