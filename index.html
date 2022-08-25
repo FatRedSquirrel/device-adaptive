@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Device</title>
   <link rel="stylesheet" href="styles/styles.css">
-
+  <script src="script.js" async></script>
+  <script src="cart.js" async></script>
 </head>
 
 <body>
@@ -54,31 +55,23 @@
                     <a class="cart-item-link" href="#">
                       <img class="cart-item-image" src="images/cart-1.png" alt="Товар." width="39" height="43">
                       <h4 class="cart-item-title">Любительская селфи-палка</h4>
+                      <span class="visually-hidden cart-item-price">500</span>
                     </a>
-                    <button class="item-delete">
-                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
-                      </svg>
-                    </button>
+                    <button class="item-delete"></button>
                   </li>
                   <li class="cart-item">
                     <a class="cart-item-link" href="#">
                       <img class="cart-item-image" src="images/cart-2.png" alt="Товар." width="39" height="43">
                       <h4 class="cart-item-title">Профессиональная
                         селфи-палка</h4>
+                        <span class="visually-hidden cart-item-price">1500</span>
                     </a>
-                    <button class="item-delete">
-                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
-                      </svg>
-                    </button>
+                    <button class="item-delete"></button>
                   </li>
                 </ul>
                 <div class="cart-amount-cost">
                   <span>Товаров: 2</span>
-                  <span>Сумма: 2000 ₽</span>
+                  <span>Сумма: <span class="cart-sum-price">2000</span>₽</span>
                 </div>
                 <a class="cart-open-link" href="#">Оформить заказ</a>
               </div>
@@ -155,31 +148,23 @@
                     <a class="cart-item-link" href="#">
                       <img class="cart-item-image" src="images/cart-1.png" alt="Товар." width="39" height="43">
                       <h4 class="cart-item-title">Любительская селфи-палка</h4>
+                      <span class="visually-hidden cart-item-price">500</span>
                     </a>
-                    <button class="item-delete">
-                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
-                      </svg>
-                    </button>
+                    <button class="item-delete"></button>
                   </li>
                   <li class="cart-item">
                     <a class="cart-item-link" href="#">
                       <img class="cart-item-image" src="images/cart-2.png" alt="Товар." width="39" height="43">
                       <h4 class="cart-item-title">Профессиональная
                         селфи-палка</h4>
+                        <span class="visually-hidden cart-item-price">1500</span>
                     </a>
-                    <button class="item-delete">
-                      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M10 1.07584L9.09091 0.166748L5 4.25766L0.909091 0.166748L0 1.07584L4.09091 5.16675L0 9.25766L0.909091 10.1667L5 6.07584L9.09091 10.1667L10 9.25766L5.90909 5.16675L10 1.07584Z" />
-                      </svg>
-                    </button>
+                    <button class="item-delete"></button>
                   </li>
                 </ul>
                 <div class="cart-amount-cost">
-                  <span>Товаров: 2</span>
-                  <span>Сумма: 2000 ₽</span>
+                  <span>Товаров: <span class="cart-total-quantity">2</span></span>
+                  <span>Сумма: <span class="cart-total-price">2000</span>₽</span>
                 </div>
                 <a class="cart-open-link" href="#">Оформить заказ</a>
               </div>
@@ -652,10 +637,5 @@
   <!-- / FOOTER -->
 
 </body>
-
-
-
-<script src="script.js"></script>
-<script src="cart.js"></script>
 
 </html>
